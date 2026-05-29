@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer Collaboration - Pear Badminton Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f5f0;
+            margin: 0;
+            padding: 0;
+            color: #3e2723;
+        }
+        /* Universal Navigation Bar */
+        nav {
+            background-color: #2c3e25;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            color: #f7f5f0;
+            font-weight: 600;
+            font-size: 22px;
+        }
+        .logo-icon { font-size: 28px; margin-right: 12px; }
+        nav .nav-links a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #f7f5f0;
+            font-weight: 400;
+            transition: color 0.3s;
+            font-size: 15px;
+        }
+        nav .nav-links a:hover { color: #87a96b; }
+        
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(62, 39, 35, 0.04);
+        }
+        h1, h2 { color: #2c3e25; font-weight: 700; }
+        p { font-weight: 300; line-height: 1.7; color: #5c4d4a; }
+        
+        /* Friend Card Layout Setup */
+        .collaboration-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 35px;
+        }
+        .friend-card {
+            background-color: #f7f5f0;
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 5px solid #87a96b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .friend-info {
+            flex: 1;
+        }
+        .friend-card h3 {
+            color: #2c3e25;
+            margin: 0 0 10px 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .friend-tag {
+            display: inline-block;
+            background-color: #2c3e25;
+            color: #f7f5f0;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .collab-btn {
+            background-color: #2c3e25;
+            color: #f7f5f0;
+            border: none;
+            padding: 10px 20px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 20px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .collab-btn:hover {
+            background-color: #87a96b;
+            color: #2c3e25;
+        }
+        footer { background-color: #2c3e25; color: #f7f5f0; text-align: center; padding: 30px; margin-top: 80px; font-size: 14px; font-weight: 300; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <span class="logo-icon">🍐</span>
+            <span>Pear Badminton Club</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="rules.html">Rules</a>
+            <a href="techniques.html">Techniques</a>
+            <a href="collaboration.html">Collaboration</a>
+            <a href="reserve.html">Book a Court</a>
+            <a href="shop.html">Shop</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Peer Sports Network</h1>
+        <p>A digital showcase highlighting excellent alternative athletic platforms crafted by fellow developers within our network. Explore their deep architectural breakdowns of swimming and track fundamentals below.</p>
+        
+        <div class="collaboration-grid">
+            
+            <div class="friend-card">
+                <div class="friend-info">
+                    <span class="friend-tag">Aquatics</span>
+                    <h3>Kaito's Swimming Platform</h3>
+                    <p>A comprehensive educational hub breaking down the technical mechanics of professional swimming disciplines. Features thorough deep-dives into stroke variations, optimal breathing cadences, and foundational swimming dynamics.</p>
+                </div>
+                <a href="https://kyamada26.github.io/Swimming-Website/" target="_blank" class="collab-btn">Visit Website</a>
+            </div>
+
+            <div class="friend-card">
+                <div class="friend-info">
+                    <span class="friend-tag">Athletics</span>
+                    <h3>Aaron's Track Platform</h3>
+                    <p>An interactive resource hub focusing on the discipline of track and field. This platform provides highly detailed insights into running forms, training protocols, sprint mechanics, and field event parameters.</p>
+                </div>
+                <a href="https://aaronchemmannoor.github.io/Track-Disciplines/" target="_blank" class="collab-btn">Visit Website</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Pear Badminton Club. Inspired by family traditions.</p>
+    </footer>
+
+</body>
+</html>

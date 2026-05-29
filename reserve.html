@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court Reservation - Pear Badminton Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f5f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #3e2723;
+        }
+        nav {
+            background-color: #2c3e25;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            color: #f7f5f0;
+            font-weight: 600;
+            font-size: 22px;
+        }
+        .logo-icon { font-size: 28px; margin-right: 12px; }
+        nav .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #f7f5f0;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        nav .nav-links a:hover { color: #87a96b; }
+        
+        .container {
+            max-width: 850px;
+            margin: 0 auto 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(62, 39, 35, 0.04);
+        }
+        h1 { color: #2c3e25; font-weight: 700; margin-bottom: 10px; }
+        p.subtitle { font-weight: 300; color: #5c4d4a; margin-bottom: 30px; }
+        .time-picker { margin: 30px 0; }
+        select {
+            padding: 12px 24px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: #3e2723;
+            background-color: #f7f5f0;
+            border-radius: 30px;
+            border: 2px solid #87a96b;
+            outline: none;
+            cursor: pointer;
+        }
+        .court-map { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 40px; }
+        .court {
+            padding: 50px 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: 2px dashed rgba(255,255,255,0.4);
+        }
+        .court:hover { transform: scale(1.02); }
+        .available { background-color: #87a96b; box-shadow: 0 6px 15px rgba(135, 169, 107, 0.2); }
+        .booked { background-color: #c08a7c; cursor: not-allowed; box-shadow: 0 6px 15px rgba(192, 138, 124, 0.15); }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(44, 62, 37, 0.4);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content { background: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 400px; width: 100%; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        .modal-content h2 { color: #2c3e25; margin-top: 0; }
+        .modal-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 25px; }
+        .modal-btn { padding: 10px 24px; font-family: 'Poppins', sans-serif; font-weight: 600; border: none; border-radius: 20px; cursor: pointer; transition: background 0.2s; }
+        .confirm-btn { background: #87a96b; color: #2c3e25; }
+        .cancel-btn { background: #e3ded5; color: #5c4d4a; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <span class="logo-icon">🍐</span>
+            <span>Pear Badminton Club</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="rules.html">Rules</a>
+            <a href="techniques.html">Techniques</a>
+            <a href="collaboration.html">Collaboration</a>
+            <a href="reserve.html">Book a Court</a>
+            <a href="shop.html">Shop</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Reserve a Court</h1>
+        <p class="subtitle">Select your desired time block. Click on any green court to finalize your booking.</p>
+        <div class="time-picker">
+            <select id="time-slot" onchange="updateCourtStatus()">
+                <option value="9am">09:00 AM - 10:00 AM</option>
+                <option value="10am">10:00 AM - 11:00 AM</option>
+                <option value="11am">11:00 AM - 12:00 PM</option>
+                <option value="12pm">12:00 PM - 01:00 PM</option>
+            </select>
+        </div>
+        <div class="court-map">
+            <div id="court1" class="court available" onclick="bookCourt(1)">Court 1</div>
+            <div id="court2" class="court available" onclick="bookCourt(2)">Court 2</div>
+            <div id="court3" class="court available" onclick="bookCourt(3)">Court 3</div>
+            <div id="court4" class="court available" onclick="bookCourt(4)">Court 4</div>
+        </div>
+    </div>
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Confirm Booking</h2>
+            <p style="color: #5c4d4a; font-weight: 300;">Court Access Fee: $15 / hour</p>
+            <p style="font-size: 13px; color: #87a96b;">Secure Check-out Protocol</p>
+            <div class="modal-buttons">
+                <button class="modal-btn confirm-btn" onclick="confirmPayment()">Confirm Payment</button>
+                <button class="modal-btn cancel-btn" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const bookingData = {
+            "9am":  { court1: "available", court2: "available", court3: "available", court4: "available" },
+            "10am": { court1: "booked",    court2: "available", court3: "booked",    court4: "available" },
+            "11am": { court1: "available", court2: "booked",    court3: "available", court4: "booked" },
+            "12pm": { court1: "booked",    court2: "booked",    court3: "booked",    court4: "available" }
+        };
+        let selectedCourt = null;
+        function updateCourtStatus() {
+            const selectedTime = document.getElementById("time-slot").value;
+            const courts = bookingData[selectedTime];
+            for (let i = 1; i <= 4; i++) {
+                const courtElement = document.getElementById(`court${i}`);
+                const status = courts[`court${i}`];
+                if (status === "booked") {
+                    courtElement.className = "court booked";
+                    courtElement.innerText = `Court ${i} (Reserved)`;
+                } else {
+                    courtElement.className = "court available";
+                    courtElement.innerText = `Court ${i} (Available)`;
+                }
+            }
+        }
+        function bookCourt(courtNumber) {
+            const selectedTime = document.getElementById("time-slot").value;
+            if (bookingData[selectedTime][`court${courtNumber}`] === "booked") return; 
+            selectedCourt = courtNumber;
+            document.getElementById("modal-title").innerText = `Reserve Court ${courtNumber}`;
+            document.getElementById("bookingModal").style.display = "flex";
+        }
+        function closeModal() { document.getElementById("bookingModal").style.display = "none"; }
+        function confirmPayment() {
+            const selectedTime = document.getElementById("time-slot").value;
+            bookingData[selectedTime][`court${selectedCourt}`] = "booked";
+            updateCourtStatus();
+            closeModal();
+            alert("Reservation Confirmed at Pear Badminton Club!");
+        }
+        updateCourtStatus();
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Pear Badminton Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f5f0;
+            margin: 0;
+            padding: 0;
+            color: #3e2723;
+        }
+        nav {
+            background-color: #2c3e25;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            color: #f7f5f0;
+            font-weight: 600;
+            font-size: 22px;
+        }
+        .logo-icon { font-size: 28px; margin-right: 12px; }
+        nav .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #f7f5f0;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        nav .nav-links a:hover { color: #87a96b; }
+        
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(62, 39, 35, 0.04);
+        }
+        h1, h2, h3 { color: #2c3e25; font-weight: 700; }
+        p { font-weight: 300; line-height: 1.7; color: #5c4d4a; }
+        .documentation-box {
+            background-color: #f7f5f0;
+            padding: 25px;
+            border-left: 5px solid #87a96b;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+        footer { background-color: #2c3e25; color: #f7f5f0; text-align: center; padding: 30px; margin-top: 80px; font-size: 14px; font-weight: 300; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <span class="logo-icon">🍐</span>
+            <span>Pear Badminton Club</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="rules.html">Rules</a>
+            <a href="techniques.html">Techniques</a>
+            <a href="collaboration.html">Collaboration</a>
+            <a href="reserve.html">Book a Court</a>
+            <a href="shop.html">Shop</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Our Story</h1>
+        <p>Pear Badminton Club was founded on a simple philosophy: sports spaces should be both high-performance and beautifully designed. Inspired by family-run sports initiatives across the globe, we sought to build an inviting, aesthetic club environment where casual players and competitive athletes alike can find their perfect match.</p>
+        <hr style="border: 0; border-top: 1px solid #e3ded5; margin: 40px 0;">
+        <h2>Project Planning Documentation</h2>
+        <p><em>Teacher Note: This section serves as the required planning artifact for the CS final project submission.</em></p>
+        <div class="documentation-box">
+            <h3>1. Inspiration & Design Logic</h3>
+            <p>The operational flow of this platform is inspired by a pickleball club startup in Thailand, adapting real-world scheduling demands into a frontend web application. The design uses an organic earth-tone palette (#2c3e25, #87a96b, #f7f5f0) to evoke a premium lifestyle brand vibe.</p>
+            <h3>2. Technical Specifications</h3>
+            <p>Built using semantic HTML5 structures, customized layouts via CSS Grid and Flexbox, and state-driven JavaScript. The core programming highlight is a fully interactive reservation map engine powered by multi-state data arrays that recalculate court availability on user request.</p>
+        </div>
+    </div>
+    <footer><p>&copy; 2026 Pear Badminton Club. Inspired by family traditions.</p></footer>
+</body>
+</html>

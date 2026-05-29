@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pear Badminton Club - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f5f0;
+            margin: 0;
+            padding: 0;
+            color: #3e2723;
+        }
+        nav {
+            background-color: #2c3e25;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            color: #f7f5f0;
+            font-weight: 600;
+            font-size: 22px;
+        }
+        .logo-icon { font-size: 28px; margin-right: 12px; }
+        nav .nav-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #f7f5f0;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+        nav .nav-links a:hover { color: #87a96b; }
+        
+        .hero {
+            background: linear-gradient(rgba(44, 62, 37, 0.7), rgba(62, 39, 35, 0.5)), url('hero-bg.jpg') no-repeat center center/cover;
+            height: 500px;
+            color: #f7f5f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 15px; letter-spacing: -1px; }
+        .hero p { font-size: 20px; font-weight: 300; margin-bottom: 35px; max-width: 600px; }
+        .btn {
+            background-color: #87a96b;
+            color: #2c3e25;
+            padding: 14px 36px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(135, 169, 107, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn:hover { background-color: #76975a; transform: translateY(-2px); }
+        
+        .features {
+            max-width: 1050px;
+            margin: 70px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            padding: 0 20px;
+        }
+        .feature-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(62, 39, 35, 0.03);
+            border-top: 4px solid #87a96b;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-card h3 { color: #2c3e25; font-size: 22px; margin-top: 0; margin-bottom: 15px; }
+        .feature-card p { font-weight: 300; line-height: 1.6; color: #5c4d4a; }
+        footer { background-color: #2c3e25; color: #f7f5f0; text-align: center; padding: 30px; margin-top: 80px; font-size: 14px; font-weight: 300; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <span class="logo-icon">🍐</span>
+            <span>Pear Badminton Club</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="rules.html">Rules</a>
+            <a href="techniques.html">Techniques</a>
+            <a href="collaboration.html">Collaboration</a>
+            <a href="reserve.html">Book a Court</a>
+            <a href="shop.html">Shop</a>
+        </div>
+    </nav>
+    <div class="hero">
+        <h1>Pear Badminton Club</h1>
+        <p>The perfect pair: Premium court spaces crafted for an active lifestyle and cultivated community.</p>
+        <a href="reserve.html" class="btn">Book a Court</a>
+    </div>
+    <div class="features">
+        <div class="feature-card">
+            <h3>Bespoke Courts</h3>
+            <p>Our premium tournament mats offer industry-leading grip and impact reduction to keep you playing at your peak.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Climate Controlled</h3>
+            <p>Escape the elements completely. Play in a perfectly air-conditioned environment optimized for high-performance flight.</p>
+        </div>
+        <div class="feature-card">
+            <h3>The Lounge & Shop</h3>
+            <p>Unwind post-match in our organic cafe and retail nook, featuring dynamic refreshments and professional equipment.</p>
+        </div>
+    </div>
+    <footer><p>&copy; 2026 Pear Badminton Club. Inspired by family traditions.</p></footer>
+</body>
+</html>
